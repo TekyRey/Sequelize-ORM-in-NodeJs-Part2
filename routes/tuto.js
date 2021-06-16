@@ -44,4 +44,10 @@ router.put('/update/:id', (req, res) => {
     .catch(err => console.error(err.message))
 })
 
+//deleted
+router.delete('/delete/:id', (req, res) =>{
+    db.tuto.destroy({where: {id: req.params.id}
+    }).then(tuto => res.send('Data Successfully Deleted'))
+})
+
 module.exports= router;
